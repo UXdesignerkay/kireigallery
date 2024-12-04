@@ -271,6 +271,11 @@ body {
   height: 100%;
   object-fit: cover;
 }
+.main-image model-viewer {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 .small-images {
   display: grid;
@@ -383,6 +388,156 @@ body {
 
 .footer-column ul li a:hover {
   opacity: 1;
+}
+
+/* Overlay styles */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Dark overlay background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow: auto;
+  padding: 2rem; /* Padding around the content inside the overlay */
+}
+
+.overlay.hidden {
+  display: none; /* Hide overlay by default */
+}
+
+.overlay-content {
+  background: white;
+  padding: 4rem; /* Increased padding for more space */
+  border-radius: 10px; /* Rounded corners for a smooth appearance */
+  max-width: 70%; /* Set maximum width for the overlay */
+  max-height: 80%; /* Set maximum height for the overlay */
+  overflow-y: auto; /* Allow vertical scrolling for long content
+text-align: left; /* Align text to the left */
+  position: relative;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4); /* Stronger shadow for a floating effect */
+  line-height: 1.8; /* Improved text readability */
+  font-size: 1.2rem; /* Larger font size for overlay content */
+}
+
+.overlay-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.overlay-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #555;
+}
+
+.overlay-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  color: #666;
+}
+
+.overlay-content ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+  list-style: disc;
+}
+
+.overlay-content li {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.overlay-content img {
+  max-width: 50%; /* Ensure the image does not exceed the overlay width */
+  max-height: 0%; /* Ensure the image does not exceed the overlay height */
+  object-fit: contain; /* Scale the image to fit within the overlay while maintaining aspect ratio */
+  border-radius: 10px; /* Optional: Add a subtle rounded corner to the image */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for a polished look */
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px; /* Adjusted position */
+  right: 15px;
+  font-size: 1.5rem; /* Close button size */
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: black;
+}
+
+.close-btn:hover {
+  color: red; /* Red color on hover for emphasis */
+}
+
+/* Small image styles */
+.small-image {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.small-image:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.small-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px; /* Rounded corners for images */
+}
+
+/* Paragraph and text spacing */
+p {
+  margin-bottom: 1rem; /* General spacing for paragraphs */
+}
+
+h2,
+h4 {
+  margin-bottom: 1rem; /* General spacing for headings */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .overlay-content {
+    max-width: 90%; /* Adjust overlay width for smaller screens */
+    max-height: 90%; /* Adjust overlay height for smaller screens */
+    padding: 2rem; /* Reduce padding for smaller screens */
+  }
+
+  .overlay-content h2 {
+    font-size: 1.8rem; /* Slightly smaller headings for smaller screens */
+  }
+
+  .overlay-content p {
+    font-size: 1rem; /* Adjust paragraph font size for smaller screens */
+  }
+}
+
+/* Small image styles */
+.small-image {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.small-image:hover {
+  transform: scale(1.05);
+}
+
+.small-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
 }
 
 /* Responsive Design */
